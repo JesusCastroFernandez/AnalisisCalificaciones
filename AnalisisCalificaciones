@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class CalificacionesAlumnos {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Ingrese la cantidad de alumnos: ");
+        int numAlumnos = input.nextInt();
+
+        double sumaCalificaciones = 0.0;
+        double calificacionMaxima = 0.0;
+        double calificacionMinima = 100.0;
+
+        for (int i = 1; i <= numAlumnos; i++) {
+            System.out.printf("Ingrese la calificación del alumno %d: ", i);
+            double calificacion = input.nextDouble();
+            sumaCalificaciones += calificacion;
+            calificacionMaxima = Math.max(calificacionMaxima, calificacion);
+            calificacionMinima = Math.min(calificacionMinima, calificacion);
+        }
+
+        double promedioCalificaciones = sumaCalificaciones / numAlumnos;
+
+        System.out.printf("La calificación promedio es: %.2f\n", promedioCalificaciones);
+        System.out.printf("La calificación máxima es: %.2f\n", calificacionMaxima);
+        System.out.printf("La calificación mínima es: %.2f\n", calificacionMinima);
+    }
+}
